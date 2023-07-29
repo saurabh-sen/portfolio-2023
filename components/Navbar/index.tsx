@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { AiFillGithub, AiOutlineMenu } from "react-icons/ai"
+import { AiFillGithub } from "react-icons/ai"
 import { BiLogoLinkedin } from "react-icons/bi"
 import ThemeToggler from './ThemeToggler';
 import CustomizedName from './CustomizedName';
