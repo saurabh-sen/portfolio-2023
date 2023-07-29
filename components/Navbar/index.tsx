@@ -17,7 +17,7 @@ function ResponsiveAppBar() {
                 <CustomizedName />
                 <ul className="navbar__items md:flex hidden gap-3 items-center text-sm">
                     {pages.map((page, index) => (
-                        <Link key={index} href={`#${page.toLowerCase()}`} className="navbar__link opacity-60 hover:opacity-100 ">
+                        <Link key={index} href={`#${page.toLowerCase()}`} className="navbar__link opacity-40 hover:opacity-100 hover:bg-gradient-to-r from-blue-500 via-purple-600 to-red-500 hover:text-transparent hover:bg-clip-text font-bold ">
                             {page}
                         </Link>
                     ))}

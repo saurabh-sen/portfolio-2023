@@ -15,6 +15,19 @@
 
   /* This is how you apply the border-color for both light and dark mode */
   .border-color {
-    @apply border border-neutral-500 rounded;
+    @apply border border-neutral-500 rounded-lg;
   }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*::selection{
+  background-color: rgb(16 185 129/1);
+  /* background-color: #f81ce5; */
+  color: #fefefe;
 }
