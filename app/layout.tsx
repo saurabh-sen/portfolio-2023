@@ -7,6 +7,7 @@ import Providers from './Providers'
 const metadata: Metadata = {
   title: 'Saurabh Sen - Portfolio',
   description: 'I am a frontend developer, I have experience in building web applications using React, Next.js, Tailwind, and other modern web technologies.',
+  themeColor: '#6c63ff',
 }
 
 export default function RootLayout({

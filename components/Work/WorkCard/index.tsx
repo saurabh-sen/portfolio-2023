@@ -20,7 +20,7 @@ const WorkCard = ({ work }: WorkCardProps) => {
         >
             <div
                 className="app__work-img w-full h-56 relative app__flex flex justify-center items-center 2xl:h-80" >
-                <Image className='w-full h-full rounded-lg object-cover' loader={() => src} src={src} alt="project image" width={400} height={400} />
+                <Image className='w-full h-full rounded-lg object-cover' width={400} height={400} src={src} alt="project image" />
 
                 <motion.div
                     whileHover={{ opacity: [0, 1] }}
