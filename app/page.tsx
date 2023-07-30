@@ -9,15 +9,27 @@ const About = dynamic(() => import('@/components/About'), {
 const Work = dynamic(() => import('@/components/Work'), {
   loading: () => <Loading />,
 })
+const Skills = dynamic(() => import('@/components/Skills'), {
+  loading: () => <Loading />,
+})
+const Experience = dynamic(() => import('@/components/Experience'), {
+  loading: () => <Loading />,
+})
+const Contact = dynamic(() => import('@/components/Contact'), {
+  loading: () => <Loading />,
+})
 
 export default function Home() {
   return (
-    <>
+    <div className='main '>
       <Navbar />
       <Hero />
       <About />
       <Work />
-    </>
+      <Skills />
+      <Experience />
+      <Contact />
+    </div>
 
   );
 }

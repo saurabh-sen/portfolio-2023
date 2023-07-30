@@ -11,8 +11,8 @@ const pages = ['Home', 'About', 'Work', 'Skills', 'Experience', 'Contact'];
 function ResponsiveAppBar() {
 
     return (
-        <nav className='Navbar'>
-            <div className="navbar__container flex justify-between items-center max-w-5xl mx-auto px-3 md:px-6 my-4 flex-row-reverse md:flex-row bg-text">
+        <nav className='Navbar sticky top-0 left-0 right-0 z-10 backdrop-blur-sm'>
+            <div className="navbar__container flex justify-between items-center max-w-7xl mx-auto p-3 md:p-6 flex-row-reverse md:flex-row bg-text ">
                 <SidebarToggle pages={pages} />
                 <CustomizedName />
                 <ul className="navbar__items md:flex hidden gap-3 items-center text-sm">

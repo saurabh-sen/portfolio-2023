@@ -46,8 +46,8 @@ const Work = () => {
     }, []);
 
     return (
-        <section id="work" className='max-w-6xl mx-auto px-3 py-12'>
-            <p className="text-5xl font-bold text-center flex gap-1 flex-wrap justify-center items-center">
+        <section id="work" className='max-w-7xl mx-auto px-3 py-12'>
+            <p className="text-3xl sm:text-5xl font-bold text-center flex gap-1 flex-wrap justify-center items-center">
                 <span className="about ">My Creative</span>
                 <span className="aboutme bg-gradient-to-r from-blue-500 via-purple-600 to-red-500 text-transparent bg-clip-text mx-2">Portfolio</span>
                 <span className="worksection ">Section</span>
