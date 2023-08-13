@@ -5,7 +5,7 @@ import herobg from "../../../public/herobg.json";
 
 const HeroAnimation = () => {
   return (
-    <Lottie animationData={herobg} className="herobg" />
+      <Lottie animationData={herobg} className="herobg" />
   )
 }
 

@@ -20,7 +20,7 @@ const SidebarToggle = ({ pages }: { pages: string[] }) => {
             </button>
             {
                 isDrawerOpen && <Drawer handleToggleDrawer={handleToggleDrawer} pages={pages} />
-            }
+            }            
         </>
     )
 }

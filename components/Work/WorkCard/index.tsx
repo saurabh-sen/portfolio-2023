@@ -16,7 +16,8 @@ const WorkCard = ({ work }: WorkCardProps) => {
     const src = urlFor(work.imgUrl).url();
 
     return (
-        <div className="app__work_item sm:w-[270px] flex-col sm:m-8 p-4 rounded-lg bg-color bg-text cursor-pointer transition-all duration-300 ease-linear app__flex flex justify-center items-center 2xl:w-96 2xl:p-5 2xl:rounded-xl"
+        <div
+            className="app__work_item sm:w-[270px] flex-col sm:m-8 p-4 rounded-lg bg-color bg-text cursor-pointer transition-all duration-300 ease-linear app__flex flex justify-center items-center 2xl:w-96 2xl:p-5 2xl:rounded-xl"
         >
             <div
                 className="app__work-img w-full h-56 relative app__flex flex justify-center items-center 2xl:h-80" >

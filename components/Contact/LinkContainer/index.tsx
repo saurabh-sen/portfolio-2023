@@ -10,8 +10,8 @@ type LinkContainerProps = {
 
 const LinkContainer = ({ src, text, href }: LinkContainerProps) => {
     return (
-        <Link href={href} className="links bg-color rounded-lg hover:shadow-md flex p-2 items-center">
-            <Image className='w-10 h-10 mx-3' width={400} height={400} src={src} alt="email" />
+        <Link href={href} className="links bg-color rounded-lg hover:shadow-md flex gap-3 p-2 md:p-4 items-center min-w-[280px]">
+            <Image className='w-10 h-10' width={400} height={400} src={src} alt="email" />
             <p className='p-text text-sm text-left font-semibold' >{text}</p>
         </Link>
     )

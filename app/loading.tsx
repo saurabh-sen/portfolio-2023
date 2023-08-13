@@ -1,8 +1,11 @@
+import { LoadingAnimation } from '@/components'
 import React from 'react'
 
 const Loading = () => {
   return (
-    <div>Loading...</div>
+    <div className="loading h-screen">
+      <LoadingAnimation />
+    </div>
   )
 }
 

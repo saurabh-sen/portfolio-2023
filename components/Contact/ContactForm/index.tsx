@@ -1,6 +1,6 @@
 "use client"
 import { client } from '@/components/client';
-import React, { ChangeEvent, useState } from 'react'
+import React, { useState } from 'react'
 
 const ContactForm = () => {
 
@@ -21,20 +21,18 @@ const ContactForm = () => {
             message: formData.message,
         };
 
-        console.log(contact)
-
-        // client.create(contact)
-        //     .then(() => {
-        //         setLoading(false);
-        //         setIsFormSubmitted(true);
-        //     })
-        //     .catch((err) => console.log(err));
+        client.create(contact)
+            .then(() => {
+                setLoading(false);
+                setIsFormSubmitted(true);
+            })
+            .catch((err) => console.log(err));
     }
 
     return (
         <>
             {!isFormSubmitted ? (
-                <form onSubmit={handleSubmit} className="app__footer-form w-full my-4 lg:w-2/5 flex-col lg:my-4 mx-8 app__flex flex justify-center items-center">
+                <form onSubmit={handleSubmit} className="app__footer-form w-full my-4 lg:w-2/5 flex-col lg:my-4 flex justify-center items-center">
                     <div className="app__flex flex justify-center items-center w-full my-3 rounded-xl cursor-pointer bg-[#edf2f8] transition-all duration-300 ease-in-out ">
                         <input className=" rounded-xl w-full p-4 border-none bg-[#edf2f8] text-[#313bac] outline-none p-text text-sm text-left leading-normal no-underline font-semibold hover:shadow-[0 0 25px #fef4f5]" type="text" placeholder="Your Name" name="username" value={username} onChange={e => setFormData(prev => prev = { ...prev, username: e.target.value })} />
                     </div>
@@ -54,7 +52,7 @@ const ContactForm = () => {
                 </form>
             ) : (
                 <div>
-                    <h3 className="head-text text-3xl sm:text-4xl font-bold text-center text-black capitalize">
+                    <h3 className="head-text text-3xl sm:text-4xl font-bold text-center break-words capitalize">
                         Thank you for getting in touch!
                     </h3>
                 </div>
