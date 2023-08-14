@@ -40,7 +40,7 @@ const Work = () => {
     useEffect(() => {
         const query = '*[_type == "works"]';
         client.fetch(query).then((data) => {
-            setFilterWork(data);
+            setFilterWork(data.filter((work: { tags: string | string[]; }) => work.tags.includes('*Featured')))
             setWorks(data);
         });
     }, []);
