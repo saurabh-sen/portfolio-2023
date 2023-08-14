@@ -161,10 +161,6 @@ const Challenges = () => {
 
   }, [])
 
-  console.log("jsChallenges",jsChallenges);
-  console.log("reactChallenges", reactChallenges);
-  console.log("assignments", assignments);
-
   return (
     <main className='challenges min-h-screen '>
       <ChallengesNavbar />
