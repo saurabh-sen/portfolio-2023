@@ -18,7 +18,7 @@ const Hero = () => {
         transition={{ type: "spring", duration: 0.4 }}
         className="heading flex flex-col gap-2 font-semibold">
         <div
-          className="hello text-5xl font-bold text-center md:text-9xl bg-gradient-to-r from-blue-500 via-purple-600 to-red-500 text-transparent bg-clip-text">Hello!</div>
+          className="hello text-5xl font-bold md:text-9xl bg-gradient-to-r from-blue-500 via-purple-600 to-red-500 text-transparent bg-clip-text">Hello!</div>
         <div
           className="componentStyle flex gap-1 text-2xl lg:text-4xl">
           <span className="openAngleBracket text-gray-500">{'<'}</span>

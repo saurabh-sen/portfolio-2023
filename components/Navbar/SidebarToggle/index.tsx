@@ -20,7 +20,7 @@ const SidebarToggle = ({ pages }: { pages: string[] }) => {
             </button>
             {
                 isDrawerOpen && <Drawer handleToggleDrawer={handleToggleDrawer} pages={pages} />
-            }            
+            }
         </>
     )
 }
@@ -45,6 +45,9 @@ const Drawer = ({ handleToggleDrawer, pages }: DrawerProps) => {
                             {page}
                         </Link>
                     ))}
+                    <Link href="challenges" className="navbar__link text-2xl" onClick={handleToggleDrawer}>
+                        Challenges
+                    </Link>
                 </ul>
 
             </div>

@@ -2,9 +2,9 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
+import LoadingAnimation from '../LoadingAnimation'
 const AboutAnimation = dynamic(() => import('./AboutAnimation'), {
-  loading: () => <p>Loading...</p>,
-  ssr: true,
+  loading: () => <LoadingAnimation />,
 })
 
 const About = () => {

@@ -5,6 +5,7 @@ import { Navbar, Hero, LoadingAnimation, ScrollToTop } from '@/components';
 import dynamic from 'next/dynamic';
 import NavbarRoutes from '@/components/Navbar/NavbarRoutes';
 import SidebarToggle from '@/components/Navbar/SidebarToggle';
+
 const About = dynamic(() => import('@/components/About'), {
   loading: () => <LoadingAnimation />,
 })
