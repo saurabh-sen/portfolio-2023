@@ -6,12 +6,13 @@ import { motion } from 'framer-motion'
 type PropsChallengeContainer = {
     title: string,
     items: {
-        heading: string;
+        title: string;
         difficulty: string;
-        codeLink: string;
-        liveLink: string;
-        authorName: string;
-        authorLink: string;
+        source_code_link: string;
+        project_demo: string;
+        contributor_name: string;
+        contributor_link: string;
+        companies?: string[] | undefined
     }[]
 }
 
@@ -28,19 +29,22 @@ const ChallengeContainer = ({ title, items }: PropsChallengeContainer) => {
             <hr />
             <div className='javascript__challenges py-4 flex flex-wrap gap-6 justify-center'>
                 {
-                    items.map((item, index) => {
+                    items.length > 0 
+                    ? items.map((item, index) => {
                         return (
                             <ChallengeCard
                                 key={index}
-                                heading={item.heading}
-                                codeLink={item.codeLink}
-                                liveLink={item.liveLink}
-                                authorName={item.authorName}
-                                authorLink={item.authorLink}
+                                heading={item.title}
+                                codeLink={item.source_code_link}
+                                liveLink={item.project_demo}
+                                authorName={item.contributor_name}
+                                authorLink={item.contributor_link}
                                 difficulty={item.difficulty}
+                                companies={item?.companies}
                             />
                         )
                     })
+                    : <p className='text-center text-sm bg-gradient-to-r from-blue-500 via-purple-600 to-red-500 text-transparent bg-clip-text font-bold'>Coming soon... </p>
                 }
             </div>
         </div>
