@@ -2,7 +2,7 @@
 import { FaRegEye } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
 import Link from 'next/link'
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 type PropsChallengeCard = {
