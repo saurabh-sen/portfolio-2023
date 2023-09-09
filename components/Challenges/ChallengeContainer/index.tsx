@@ -4,6 +4,7 @@ import ChallengeCard from '../ChallengeCard'
 import { motion } from 'framer-motion'
 
 type PropsChallengeContainer = {
+    handleShowToast: () => void;
     title: string,
     items: {
         title: string;
@@ -17,7 +18,7 @@ type PropsChallengeContainer = {
     }[]
 }
 
-const ChallengeContainer = ({ title, items }: PropsChallengeContainer) => {
+const ChallengeContainer = ({ handleShowToast, title, items }: PropsChallengeContainer) => {
 
     return (
         <div className='javascript__container my-6 p-4'>
@@ -31,23 +32,24 @@ const ChallengeContainer = ({ title, items }: PropsChallengeContainer) => {
             <hr />
             <div className='javascript__challenges py-4 flex flex-wrap gap-6 justify-center'>
                 {
-                    items.length > 0 
-                    ? items.map((item, index) => {
-                        return (
-                            <ChallengeCard
-                                key={index}
-                                heading={item.title}
-                                codeLink={item.source_code_link}
-                                liveLink={item.project_demo}
-                                authorName={item.contributor_name}
-                                authorLink={item.contributor_link}
-                                difficulty={item.difficulty}
-                                companies={item?.companies}
-                                id={item._id}
-                            />
-                        )
-                    })
-                    : <p className='text-center text-sm bg-gradient-to-r from-blue-500 via-purple-600 to-red-500 text-transparent bg-clip-text font-bold'>Coming soon... </p>
+                    items.length > 0
+                        ? items.map((item, index) => {
+                            return (
+                                <ChallengeCard
+                                    key={index}
+                                    handleShowToast={handleShowToast}
+                                    heading={item.title}
+                                    codeLink={item.source_code_link}
+                                    liveLink={item.project_demo}
+                                    authorName={item.contributor_name}
+                                    authorLink={item.contributor_link}
+                                    difficulty={item.difficulty}
+                                    companies={item?.companies}
+                                    id={item._id}
+                                />
+                            )
+                        })
+                        : <p className='text-center text-sm bg-gradient-to-r from-blue-500 via-purple-600 to-red-500 text-transparent bg-clip-text font-bold'>Coming soon... </p>
                 }
             </div>
         </div>

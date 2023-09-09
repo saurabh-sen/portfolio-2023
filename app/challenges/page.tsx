@@ -3,10 +3,14 @@
 import { Footer, LoadingAnimation } from '@/components';
 import ChallengeContainer from '@/components/Challenges/ChallengeContainer';
 import ChallengesNavbar from '@/components/Challenges/ChallengesNavbar';
+import ContributorsGuide from '@/components/ContributorsGuide/ContributorsGuide';
 import { client } from '@/components/client';
+import useToast from '@/utils/Hooks/useToast';
 import React, { useEffect } from 'react'
 
 const Challenges = () => {
+
+  const {handleShowToast, Toasty} = useToast(4000);
 
   const [jsChallenges, setJsChallenges] = React.useState({
     title: 'Javascript',
@@ -55,13 +59,15 @@ const Challenges = () => {
           isLoading 
           ? <LoadingAnimation /> 
           : <>
-            <ChallengeContainer title={jsChallenges.title} items={jsChallenges.items} />
-            <ChallengeContainer title={reactChallenges.title} items={reactChallenges.items} />
-            <ChallengeContainer title={assignments.title} items={assignments.items} />
+            <ChallengeContainer handleShowToast={handleShowToast} title={jsChallenges.title} items={jsChallenges.items} />
+            <ChallengeContainer handleShowToast={handleShowToast} title={reactChallenges.title} items={reactChallenges.items} />
+            <ChallengeContainer handleShowToast={handleShowToast} title={assignments.title} items={assignments.items} />
           </>
         }
       </div>
+      <ContributorsGuide />
       <Footer />
+      <Toasty />
     </main>
   )
 }

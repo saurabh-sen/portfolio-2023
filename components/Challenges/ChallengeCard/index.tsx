@@ -1,11 +1,13 @@
 "use client"
 import { FaRegEye } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
+import { BsLink45Deg } from 'react-icons/bs'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 type PropsChallengeCard = {
+    handleShowToast: () => void;
     heading: string;
     difficulty: string;
     codeLink: string;
@@ -32,18 +34,32 @@ let difficultyColorsCSS: typeDifficultyColor = {
     'hard': '#ef4444'
 }
 
-const ChallengeCard = ({ heading, difficulty, codeLink, liveLink, authorName, authorLink, companies, id }: PropsChallengeCard) => {
+const ChallengeCard = ({ handleShowToast, heading, difficulty, codeLink, liveLink, authorName, authorLink, companies, id }: PropsChallengeCard) => {
 
     useEffect(() => {
         const urlId = window.location.hash.slice(1);
         if (urlId === id) {
             const element = document.getElementById(id)
-            element?.scrollIntoView({ behavior: 'smooth' })
             if (element)
                 element.style.boxShadow = `0 3px 13px 4px ${difficultyColorsCSS[difficulty]}`;
-
         }
-    }, [id, difficulty])
+
+        return () => {
+            const element = document.getElementById(id)
+            if (element)
+                element.style.boxShadow = 'none';
+        }
+    }, [])
+
+    async function handleCopyLink(){
+        try {
+            if(!navigator.clipboard) return;
+            await navigator.clipboard.writeText(`${window.location.origin}/challenges#${id}`);
+            handleShowToast();
+        } catch (error) {
+            console.log("error while copying challenge link", error)
+        }
+    }
 
     return (
         <motion.div
@@ -53,7 +69,10 @@ const ChallengeCard = ({ heading, difficulty, codeLink, liveLink, authorName, au
             className={`w-72 rounded-md flex flex-col p-4 gap-2 border ${difficultyColorsTailwind[difficulty]} hover:shadow-md bg-color`}
             id={id}
         >
-            <Link href={`#${id}`} className="challenge__title underline lowercase">#{heading}</Link>
+            <Link href={`#${id}`} onClick={handleCopyLink} className="challenge__title underline lowercase group ">
+                <span className="text">#{heading}</span>
+                <BsLink45Deg className=" hidden group-hover:inline ml-1" />
+            </Link>
             <div className="source__buttons flex items-center justify-between text-sm">
                 <Link href={codeLink} className="source__button p-2 bg-neutral-300 dark:bg-neutral-700 rounded-md flex gap-1 items-center"><BiCodeAlt /> <span>Code</span></Link>
                 <Link href={liveLink} className="source__button p-2 bg-neutral-300 dark:bg-neutral-700 rounded-md flex gap-1 items-center"> <FaRegEye /> <span>Live</span></Link>
