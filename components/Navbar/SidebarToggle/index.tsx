@@ -43,7 +43,7 @@ const Drawer = ({ handleToggleDrawer, pages }: DrawerProps) => {
                 </motion.button>
             </div>
             <div className='flex flex-col justify-center items-center mt-10'>
-                <ul className="flex flex-col gap-2 text-2xl font-bold text-center"> 
+                <ul className="flex flex-col gap-2 text-2xl font-bold text-center text-white"> 
                     {pages.map((page, index) => (
                         <motion.div
                             key={index}
