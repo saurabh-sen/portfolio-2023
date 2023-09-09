@@ -12,11 +12,13 @@ type PropsChallengeContainer = {
         project_demo: string;
         contributor_name: string;
         contributor_link: string;
-        companies?: string[] | undefined
+        companies?: string[] | undefined;
+        _id: string;
     }[]
 }
 
 const ChallengeContainer = ({ title, items }: PropsChallengeContainer) => {
+
     return (
         <div className='javascript__container my-6 p-4'>
             <motion.div
@@ -41,6 +43,7 @@ const ChallengeContainer = ({ title, items }: PropsChallengeContainer) => {
                                 authorLink={item.contributor_link}
                                 difficulty={item.difficulty}
                                 companies={item?.companies}
+                                id={item._id}
                             />
                         )
                     })

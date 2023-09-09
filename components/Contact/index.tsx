@@ -13,7 +13,7 @@ import { motion } from 'framer-motion'
 
 const Contact = () => {
     return (
-        <section id='contact' className='contact max-w-7xl mx-auto px-3 py-16 sm:py-20 pt-8'>
+        <section id='contact' className='contact max-w-7xl mx-auto px-3 pt-8 sm:pt-20'>
             <motion.p
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ const Contact = () => {
                     <LinkContainer src={leetcode} text='Leetcode' href="https://leetcode.com/Saurabh_Sen" />
                     <LinkContainer src={linkedin} text='Linkedin' href="https://linkedin.com/in/saurabh-sen-profile" />
                 </div>
-                <span className="or text-3xl sm:text-5xl font-semibold">Or</span>
+                <span className="or text-3xl sm:text-5xl font-semibold">OR</span>
                 <ContactForm />
             </div>
             <Footer />

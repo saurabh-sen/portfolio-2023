@@ -19,14 +19,14 @@
   }
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
-*::selection{
+*::selection {
   background-color: rgb(16 185 129/1);
   /* background-color: #f81ce5; */
   color: #fefefe;
@@ -46,7 +46,7 @@
 .button {
   --border-right: 6px;
   --text-stroke-color: grey;
-  --animation-color: #37FF8B;
+  --animation-color: #37ff8b;
   --fs-size: 1.5rem;
   letter-spacing: 3px;
   text-decoration: none;
@@ -73,7 +73,7 @@
 /* hover */
 .button:hover .hover-text {
   width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color))
+  filter: drop-shadow(0 0 23px var(--animation-color));
 }
 
 .scrolltotop {
@@ -83,4 +83,8 @@
 
 .scrolltotop:hover {
   box-shadow: 0px 0px 15px 4px #2eabfb;
+}
+
+.sidebar__drawer {
+  background: url("../public/sidebar.jpg") no-repeat center center/cover;
 }

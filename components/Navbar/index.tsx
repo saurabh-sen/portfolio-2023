@@ -15,7 +15,7 @@ function ResponsiveAppBar({ Routes, SidebarRoutes }: PropsResponsiveAppBar) {
 
     return (
         <nav className='Navbar sticky top-0 left-0 right-0 z-10 backdrop-blur-sm'>
-            <div className="navbar__container flex justify-between items-center max-w-7xl mx-auto p-3 md:p-6 flex-row-reverse md:flex-row ">
+            <div className="navbar__container flex justify-between items-center max-w-7xl mx-auto p-4 flex-row-reverse md:flex-row ">
                 <SidebarRoutes />
                 <CustomizedName />
                 <Routes />
