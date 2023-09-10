@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import React from 'react'
+import React, { use, useEffect } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RxCross1 } from "react-icons/rx"
 import { motion } from 'framer-motion';
@@ -32,6 +32,14 @@ type DrawerProps = {
 }
 
 const Drawer = ({ handleToggleDrawer, pages }: DrawerProps) => {
+
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'unset';
+        }
+    }, [])
+
     return (
         <div className='sidebar__drawer fixed top-0 left-0 w-screen h-screen z-40'>
             <div className='flex justify-end m-6'>
