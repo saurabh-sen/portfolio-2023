@@ -32,7 +32,7 @@ export default function ContributorsGuide() {
                     <ul className='list-decimal text-sm sm:text-base ml-4'>
                         <li>Problem title</li>
                         <li>Code link</li>
-                        <li>Live link(can be same as for codesandbox etc)</li>
+                        <li>Live link(can be same as Code Link for codesandbox/stackblitz etc)</li>
                         <li>Level of difficulty(Easy, Medium or Hard)</li>
                         <li>Author name</li>
                         <li>Author contact link</li>
