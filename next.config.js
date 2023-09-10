@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -10,6 +11,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "i.postimg.cc",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "api.visitorbadge.io",
         port: "",
       },
     ],

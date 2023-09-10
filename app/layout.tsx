@@ -7,6 +7,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import Image from 'next/image';
 
 const metadata: Metadata = {
   title: 'Saurabh Sen - Portfolio',
@@ -30,6 +31,7 @@ export default function RootLayout({
             {children}
           </QueryClientProvider>
         </Providers>
+        <Image src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fsaurabhsen.me&label=Views&labelColor=%23427bf5&countColor=%23000000&labelStyle=upper" alt='visitor badge' width={100} height={50} className='visitor__badge fixed left-0 bottom-0 z-30 ' />
       </body>
     </html>
   )

@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import Resume from './Resume'
 import { motion } from 'framer-motion'
 import LoadingAnimation from '../LoadingAnimation'
+import Image from 'next/image'
 const HeroAnimation = dynamic(() => import('./HeroAnimation'), {
   loading: () => <LoadingAnimation />,
 })
