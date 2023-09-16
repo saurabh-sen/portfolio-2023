@@ -4,7 +4,7 @@ import ChallengeCard from '../ChallengeCard'
 import { motion } from 'framer-motion'
 
 type PropsChallengeContainer = {
-    handleShowToast: () => void;
+    handleShowToast: (message: string) => void;
     title: string,
     items: {
         title: string;
@@ -37,7 +37,6 @@ const ChallengeContainer = ({ handleShowToast, title, items }: PropsChallengeCon
                             return (
                                 <ChallengeCard
                                     key={index}
-                                    handleShowToast={handleShowToast}
                                     heading={item.title}
                                     codeLink={item.source_code_link}
                                     liveLink={item.project_demo}
@@ -46,6 +45,7 @@ const ChallengeContainer = ({ handleShowToast, title, items }: PropsChallengeCon
                                     difficulty={item.difficulty}
                                     companies={item?.companies}
                                     id={item._id}
+                                    handleShowToast={handleShowToast}
                                 />
                             )
                         })

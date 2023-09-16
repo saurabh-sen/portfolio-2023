@@ -1,6 +1,5 @@
 "use client"
 import './globals.css'
-import type { Metadata } from 'next'
 import * as React from 'react';
 import Providers from './Providers'
 import {
@@ -8,12 +7,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import Image from 'next/image';
-
-const metadata: Metadata = {
-  title: 'Saurabh Sen - Portfolio',
-  description: 'I am a frontend developer, I have experience in building web applications using React, Next.js, Tailwind, and other modern web technologies.',
-  themeColor: '#6c63ff',
-}
+import Head from 'next/head';
 
 const queryClient = new QueryClient();
 
@@ -25,6 +19,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Head>
+        <title>Saurabh Sen - Portfolio</title>
+        <meta name="description" content="I am a frontend developer, I have experience in building web applications using React, Next.js, Tailwind, and other modern web technologies." />
+        <meta name="theme-color" content="#6c63ff" />
+      </Head>
       <body className="">
         <Providers>
           <QueryClientProvider client={queryClient}>

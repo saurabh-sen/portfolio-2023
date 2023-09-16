@@ -10,7 +10,7 @@ import React, { useEffect } from 'react'
 
 const Challenges = () => {
 
-  const {handleShowToast, Toasty} = useToast(4000);
+  const { handleShowToast, Toasty } = useToast(4000);
 
   const [jsChallenges, setJsChallenges] = React.useState({
     title: 'Javascript',

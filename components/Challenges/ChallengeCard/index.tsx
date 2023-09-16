@@ -7,7 +7,6 @@ import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 type PropsChallengeCard = {
-    handleShowToast: () => void;
     heading: string;
     difficulty: string;
     codeLink: string;
@@ -16,6 +15,7 @@ type PropsChallengeCard = {
     authorLink: string;
     companies?: string[] | undefined;
     id: string;
+    handleShowToast: (message: string) => void;
 }
 
 type typeDifficultyColor = {
@@ -34,30 +34,35 @@ let difficultyColorsCSS: typeDifficultyColor = {
     'hard': '#ef4444'
 }
 
-const ChallengeCard = ({ handleShowToast, heading, difficulty, codeLink, liveLink, authorName, authorLink, companies, id }: PropsChallengeCard) => {
+const ChallengeCard = ({ heading, difficulty, codeLink, liveLink, authorName, authorLink, companies, id, handleShowToast }: PropsChallengeCard) => {
 
+    // scroll to the challenge card on first render and glow the card
     useEffect(() => {
+        const element = document.getElementById(id)
         const urlId = window.location.hash.slice(1);
-        if (urlId === id) {
-            const element = document.getElementById(id)
-            if (element)
+        if (urlId === id) {            
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: "center", inline: "nearest" });
                 element.style.boxShadow = `0 3px 13px 4px ${difficultyColorsCSS[difficulty]}`;
+            }
         }
 
         return () => {
-            const element = document.getElementById(id)
             if (element)
                 element.style.boxShadow = 'none';
         }
-    }, [])
+    }, [difficulty, id])
 
-    async function handleCopyLink(){
-        try {
-            if(!navigator.clipboard) return;
-            await navigator.clipboard.writeText(`${window.location.origin}/challenges#${id}`);
-            handleShowToast();
-        } catch (error) {
-            console.log("error while copying challenge link", error)
+    function handleCopyLink(heading: string) {
+        return async (e: React.MouseEvent) => {
+            e.preventDefault();
+            try {
+                if (!navigator.clipboard) return;
+                await navigator.clipboard.writeText(`${window.location.origin}/challenges#${id}`);
+                handleShowToast(`Copied ${heading.toUpperCase()} link to clipboard`);
+            } catch (error) {
+                console.log("error while copying challenge link", error)
+            }
         }
     }
 
@@ -69,7 +74,7 @@ const ChallengeCard = ({ handleShowToast, heading, difficulty, codeLink, liveLin
             className={`w-72 rounded-md flex flex-col p-4 gap-2 border ${difficultyColorsTailwind[difficulty]} hover:shadow-md bg-color`}
             id={id}
         >
-            <Link href={`#${id}`} onClick={handleCopyLink} className="challenge__title underline lowercase group ">
+            <Link href={`#/${id}`} className="challenge__title underline lowercase group " onClick={handleCopyLink(heading)}>
                 <span className="text">#{heading}</span>
                 <BsLink45Deg className=" hidden group-hover:inline ml-1" />
             </Link>
