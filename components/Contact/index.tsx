@@ -22,7 +22,7 @@ const Contact = () => {
                 }}
                 className="text-3xl sm:text-5xl font-bold text-center">
                 <span className="about mr-2">Contact</span>
-                <span className="aboutme bg-gradient-to-r from-blue-500 via-purple-600 to-red-500 text-transparent bg-clip-text">Links</span>
+                <span className="aboutme bg-gradient-to-r from-blue-500 via-purple-600 to-red-500 text-transparent bg-clip-text">Me</span>
             </motion.p>
             <div className="contactContainer flex justify-evenly items-center flex-col gap-4 md:flex-row mt-6">
                 <div className="links flex flex-col gap-2">
