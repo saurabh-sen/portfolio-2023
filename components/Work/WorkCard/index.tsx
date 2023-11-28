@@ -52,11 +52,11 @@ const WorkCard = ({ work }: WorkCardProps) => {
             </div>
 
             <div className="app__work-content p-2 w-full relative flex-col app__flex flex justify-center items-center bg-text" >
-                <h4 className="bold-text text-sm sm:text-base 2xl:text-4xl font-bold text-left mt-4 leading-normal 2xl:mt-12">{work.title}</h4>
-                <p className="p-text text-xs text-left leading-normal 2xl:text-3xl" style={{ marginTop: 10 }}>{work.description}</p>
+                <h4 className="bold-text text-sm sm:text-base font-bold text-left mt-4 leading-normal 2xl:mt-12">{work.title}</h4>
+                <p className="p-text text-xs text-left leading-normal" style={{ marginTop: 10 }}>{work.description}</p>
 
                 <div className="app__work-tag absolute py-2 px-4 rounded-xl top-[-25px] app__flex flex justify-center bg-color items-center" >
-                    <p className="p-text text-xs text-left leading-normal 2xl:text-3xl" >{work.tags[0]}</p>
+                    <p className="p-text text-xs text-left leading-normal" >{work.tags[0]}</p>
                 </div>
             </div>
         </div>
