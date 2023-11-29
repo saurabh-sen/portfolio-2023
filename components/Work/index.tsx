@@ -4,6 +4,7 @@ import WorkFilters from './WorkFilters';
 import WorkCard from './WorkCard';
 import { client } from '@/components/client';
 import { motion } from 'framer-motion';
+import LoadingAnimation from '../LoadingAnimation';
 
 export type workType = {
     codeLink: string;
@@ -21,6 +22,7 @@ const Work = () => {
     const [filterWork, setFilterWork] = React.useState<workType[]>([]);
     const [works, setWorks] = React.useState<workType[]>([]);
     const [animateCard, setAnimateCard] = React.useState<{ y: number; opacity: number; }>({ y: 0, opacity: 1 });
+    const [loading, setLoading] = React.useState<boolean>(false);
 
     const handleClick = (item: string) => {
         setActiveFilter(item);
@@ -38,10 +40,15 @@ const Work = () => {
     }
 
     useEffect(() => {
+        setLoading(true);
         const query = '*[_type == "works"]';
         client.fetch(query).then((data) => {
             setFilterWork(data.filter((work: { tags: string | string[]; }) => work.tags.includes('*Featured')))
             setWorks(data);
+            setLoading(false);
+        }).catch((err) => {
+            console.log(err);
+            setLoading(false);
         });
     }, []);
 
@@ -70,7 +77,7 @@ const Work = () => {
             </motion.div>
             <motion.div animate={animateCard} className="workContainer flex flex-wrap justify-center items-center gap-4">
                 {
-                    filterWork.length > 0 && filterWork.map((work: workType, index: number) => <WorkCard key={work._id} work={work} />)
+                    loading ? <LoadingAnimation /> : filterWork.length > 0 && filterWork.map((work: workType, index: number) => <WorkCard key={work._id} work={work} />)
                 }
             </motion.div>
         </section>

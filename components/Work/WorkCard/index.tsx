@@ -19,7 +19,7 @@ const WorkCard = ({ work }: WorkCardProps) => {
         <div className="app__work_item sm:w-[270px] flex-col sm:m-8 p-4 rounded-lg bg-color bg-text cursor-pointer transition-all duration-300 ease-linear app__flex flex justify-center items-center 2xl:w-96 2xl:p-5 2xl:rounded-xl"
         >
             <div
-                className="app__work-img w-full h-56 relative app__flex flex justify-center items-center 2xl:h-80" >
+                className="app__work-img w-full relative app__flex flex justify-center items-center" >
                 <Image className='w-full h-full rounded-lg object-cover' width={400} height={400} src={src} alt="project image" />
 
                 <motion.div
@@ -51,7 +51,7 @@ const WorkCard = ({ work }: WorkCardProps) => {
             </div>
 
             <div className="app__work-content p-2 w-full relative flex-col app__flex flex justify-center items-center bg-text" >
-                <h4 className="bold-text text-sm sm:text-base font-bold text-left mt-4 leading-normal 2xl:mt-12">{work.title}</h4>
+                <h4 className="bold-text text-sm sm:text-base font-bold text-left mt-4 leading-normal">{work.title}</h4>
                 <p className="p-text text-xs text-left leading-normal" style={{ marginTop: 10 }}>{work.description}</p>
 
                 <div className="app__work-tag absolute py-2 px-4 rounded-xl top-[-25px] app__flex flex justify-center bg-color items-center" >
