@@ -8,6 +8,7 @@ import {
 } from '@tanstack/react-query'
 import Image from 'next/image';
 import Head from 'next/head';
+import Script from 'next/script';
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,12 @@ export default function RootLayout({
         <meta name="description" content="I am a frontend developer, I have experience in building web applications using React, Next.js, Tailwind, and other modern web technologies." />
         <meta name="theme-color" content="#6c63ff" />
       </Head>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3186822144211432"
+        crossOrigin="anonymous"
+        strategy="lazyOnload"
+      />
       <body className="">
         <Providers>
           <QueryClientProvider client={queryClient}>
