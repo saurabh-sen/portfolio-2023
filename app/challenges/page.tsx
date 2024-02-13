@@ -1,7 +1,7 @@
 "use client"
 
 import { Footer, LoadingAnimation } from '@/components';
-import AdSense from '@/components/AdSense/AdSense';
+// import AdSense from '@/components/AdSense/AdSense';
 import ChallengeContainer from '@/components/Challenges/ChallengeContainer';
 import ChallengesNavbar from '@/components/Challenges/ChallengesNavbar';
 import ContributorsGuide from '@/components/ContributorsGuide/ContributorsGuide';
@@ -61,16 +61,16 @@ const Challenges = () => {
             ? <LoadingAnimation />
             : <>
               <ChallengeContainer handleShowToast={handleShowToast} title={jsChallenges.title} items={jsChallenges.items} />
-              <AdSense adSlot='4261485072' />
+{/*               <AdSense adSlot='4261485072' /> */}
               <ChallengeContainer handleShowToast={handleShowToast} title={reactChallenges.title} items={reactChallenges.items} />
-              <AdSense adSlot='1690327903' />
+{/*               <AdSense adSlot='1690327903' /> */}
               <ChallengeContainer handleShowToast={handleShowToast} title={assignments.title} items={assignments.items} />
-              <AdSense adSlot='3258544533' />
+{/*               <AdSense adSlot='3258544533' /> */}
             </>
         }
       </div>
       <ContributorsGuide />
-      <AdSense adSlot='3450116220' />
+{/*       <AdSense adSlot='3450116220' /> */}
       <Footer />
       <Toasty />
     </main>
